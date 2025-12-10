@@ -65,9 +65,11 @@ const ForecastBlock = ({ forecast, onClickBaseLink }) => {
                           )
                       )}
 
-                      <p className="w-full mt-2 mb-1 text-center bg-green-400">
-                        {services.average} {UNITS[indicator]}
-                      </p>
+                      {services.average && (
+                        <p className="w-full mt-2 mb-1 text-center bg-green-400">
+                          {services.average} {UNITS[indicator]}
+                        </p>
+                      )}
                     </div>
                   )
               )}

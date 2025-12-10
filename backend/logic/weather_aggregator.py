@@ -77,7 +77,10 @@ class WeatherAggregator:
 
                 if len(result[day]["indicators"][key]) == 0:
                     del result[day]["indicators"][key]
-                elif not isinstance(value, str):
+                elif (
+                    not isinstance(value, str)
+                    and len(result[day]["indicators"][key]) > 1
+                ):
                     result[day]["indicators"][key]["average"] = round(
                         sum(result[day]["indicators"][key].values())
                         / len(result[day]["indicators"][key]),
